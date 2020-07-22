@@ -1,10 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+/* 
+Very Dark Grayish Blue: hsl(217, 19%, 35%)
+Desaturated Dark Blue: hsl(214, 17%, 51%)
+Grayish Blue: hsl(212, 23%, 69%)
+Light Grayish Blue: hsl(210, 46%, 95%)
+ */
+
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Manrope';
+    font-size: 13px;
+
 }
 
+html, body {
+    background-color: hsl(210, 46%, 95%);
+    height: 100%;
+    overflow: hidden;
+}
 
-body {
-    background-color: green;
+.attribution{
+     font-size: 11px; 
+     position: fixed;
+     text-align: center; 
+     bottom: 10px;
+     width: 100%;
+}
+
+.attribution a { color: hsl(228, 45%, 44%); }
+
+.mainContainer{
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    display:grid;
+    grid-template: 1fr 1.4fr 1fr / 1fr 3fr 1fr;
+}
+
+.cardContainer{
+    background-color: hsl(212, 23%, 69%);
+    grid-area: 2/2/3/3;
+    /* overflow: hidden; */
+    display: flex;
+    min-height: 0;
+    border-radius: 10px;
+}
+.cardContainer
+
+.imageContainer{
+    border-radius: 10px 0 0 10px;
+    max-width: 40%;
+    min-width: 40%;
+    overflow: hidden;
+    /* border-radius: 100%; */
+    /* flex-grow: 1; */
+}
+.imageContainer img{
+    width: 100%;
+    height: 100%;
+}
+.cardContent{
+    border-radius: 0px 10px 10px 0px;
+    background-color: white;
+    flex-grow: 3;
+    padding: 1rem 2.7rem;
+    display: flex;
+    /* padding-bottom: 2rem; */
+    flex-direction: column;
+    /* justify-content: space-around; */
+}
+.cardTitle{
+    font-weight: 700;
+    font-size: large;
+    overflow: hidden;
+    padding: 5% 0;
+    color: hsl(217, 19%, 35%);
+}
+
+.cardBody{
+    color: hsl(214, 17%, 51%);
+    overflow: hidden;
+    padding: 0 0 3% 0;
+}
+
+.cardAuthorContainer{
+    margin-top: 3%;
+    width: 100%;
+    height: 20%;
+    /* overflow: hidden; */
+    display: flex;
+    color: hsl(217, 19%, 35%);
+    min-width: 0;
+}
+
+.cardAuthorContainer img{
+    width: auto;
+    height: 100%;
+    border-radius: 100%;
+    margin-right: 3%;
+}
+.authorInfo{
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.shareBtnContainer{
+    align-self: center;
+    height: 70%;
+    background-color: hsl(210, 46%, 95%);
+    border-radius: 100%;
+    width: 10%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.shareBtnContainer img{
+    height: 40%;
+}
+
+.shareBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.shareBox{
+    position: absolute;
+    top: -90px;
+    visibility: hidden;
+    /* z-index: 2; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shareBoxContent{
+    color: hsl(214, 17%, 51%);
+    letter-spacing: 0.5rem;
+    border-radius: 12px;
+    background-color: hsl(217, 19%, 35%);
+    width: 250px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shareTitle{
+    padding-right: 10px;
+    font-size: 16px;
+}
+.arrowDown{
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid hsl(217, 19%, 35%);
+}
+
+@media screen and (max-width:940px){
+    .mainContainer{
+        grid-template: 1fr 1.4fr 1fr / 1fr 4.5fr 1fr;
+    }
+}
+@media screen and (max-width:800px){
+    .mainContainer{
+        grid-template: 1fr 1.4fr 1fr / 1fr 7fr 1fr;
+    }
+}
+
+.active {
+    background-color:hsl(214, 17%, 51%);
+    border-radius: 100%;
+}
+
+.noSelectable, img {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none; 
+                                 
 }
