@@ -48,7 +48,6 @@ html, body {
     min-height: 0;
     border-radius: 10px;
 }
-.cardContainer
 
 .imageContainer{
     border-radius: 10px 0 0 10px;
@@ -74,28 +73,50 @@ html, body {
 }
 .cardTitle{
     font-weight: 700;
+    padding: 5% 0 0 0;
     font-size: large;
     overflow: hidden;
-    padding: 5% 0;
+    height: 50%;
     color: hsl(217, 19%, 35%);
 }
 
 .cardBody{
+    height: 40%;
     color: hsl(214, 17%, 51%);
+    /* font-size: x-larger; */
+    /* padding: 5% 0 2.5% 0; */
     overflow: hidden;
-    padding: 0 0 3% 0;
 }
 
 .cardAuthorContainer{
-    margin-top: 3%;
+    padding-top: 2.5%;
     width: 100%;
     height: 20%;
-    /* overflow: hidden; */
     display: flex;
     color: hsl(217, 19%, 35%);
     min-width: 0;
 }
 
+.mobileShareBox{
+    display: none;
+    width: 100%;
+    height: 20%;
+    background-color:hsl(217, 19%, 35%);
+    justify-content: space-evenly;
+    align-items: center;
+    color: hsl(214, 17%, 51%);
+    letter-spacing: 0.3em;
+}
+
+.mobileShareBtn{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: hsl(212, 23%, 69%);
+}
 .cardAuthorContainer img{
     width: auto;
     height: 100%;
@@ -110,12 +131,13 @@ html, body {
     flex-grow: 1;
 }
 
+
 .shareBtnContainer{
     align-self: center;
-    height: 70%;
+    height: 40px;
     background-color: hsl(210, 46%, 95%);
     border-radius: 100%;
-    width: 10%;
+    width: 40px;
     display: flex;
     position: relative;
     justify-content: center;
@@ -123,7 +145,7 @@ html, body {
 }
 
 .shareBtnContainer img{
-    height: 40%;
+    height: 45%;
 }
 
 .shareBtn {
@@ -149,16 +171,24 @@ html, body {
     letter-spacing: 0.5rem;
     border-radius: 12px;
     background-color: hsl(217, 19%, 35%);
-    width: 250px;
+    width: calc(100vh/3);
     height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+.shareBoxContent img{
+    border-radius: 0;
+    margin: 2%;
+    height: 40%;
+}
 .shareTitle{
     padding-right: 10px;
     font-size: 16px;
 }
+
+
 .arrowDown{
     width: 0;
     height: 0;
@@ -172,11 +202,67 @@ html, body {
         grid-template: 1fr 1.4fr 1fr / 1fr 4.5fr 1fr;
     }
 }
+
 @media screen and (max-width:800px){
     .mainContainer{
-        grid-template: 1fr 1.4fr 1fr / 1fr 7fr 1fr;
+        grid-template: 1fr 1.6fr 1fr / 1fr 10fr 1fr;
+    }
+    .shareBoxContent{
+        letter-spacing: 0.2rem;
+        width: calc(100vh/4);
+        height: 60px;
     }
 }
+
+@media screen and (max-width:600px){
+    .mainContainer{
+        grid-template: 1fr 1.8fr 1fr / 1fr 20fr 1fr;
+    }
+    .shareBoxContent{
+        letter-spacing: 0rem;
+        width: calc(100vh/4.7);
+        height: 60px;
+    }
+}
+@media screen and (max-width:550px){
+    .mainContainer{
+        grid-template: 1fr 10fr 1fr / 1fr 4fr 1fr;
+    }
+
+    .cardContainer{
+        flex-direction: column;
+        overflow: hidden;
+        /* justify-content: space-between; */
+    }
+    .imageContainer{
+        border-radius: 0;
+        max-width: 100%;
+        min-height: 40%;
+        flex-basis: 40%;
+        overflow: hidden;
+    }
+    .cardContent{
+        max-height: 60%;
+        border-radius: 0px;
+        padding: 0;
+        justify-content: space-between;
+    }
+    
+    .cardTitle, .cardBody, .cardAuthorContainer{
+        padding: 3% 8%;
+    }
+    .cardAuthorContainer{
+        padding: 5% 8%;
+        width: auto;
+        height: 20%;
+        /* background-color: red; */
+        align-items: center;
+        /* margin-right: 3%; */
+    }
+}
+
+
+
 
 .active {
     background-color:hsl(214, 17%, 51%);
