@@ -30,6 +30,7 @@ mobileShareButton.addEventListener('click',e =>{
     mobileSharePanel.style.display = 'none'
     authorContainer.style.display = 'flex'
     shareButton.className = 'shareBtn'
+    shareIcon.src = './images/icon-share.svg'
 })
 
 window.addEventListener('resize',e =>{
